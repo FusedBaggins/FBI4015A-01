@@ -1,5 +1,6 @@
-import express from 'express';
 import http from 'http';
+import express from 'express';
+import bodyParser from 'body-parser';
 
 // local
 import routes from "./routes";
@@ -19,6 +20,7 @@ class Application {
 
     private _setMiddlewares(): void {
         this.express.use(express.json());
+        this.express.use(bodyParser.urlencoded({extended: true}));
     }
 
     private _setRoutes(): void {
