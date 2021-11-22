@@ -4,5 +4,8 @@
     "target": "ESnext",
     "rootDir": "./",
     "esModuleInterop": true
-  }
+  },
+  "include": [
+    "./app/**/*"
+  ]
 }

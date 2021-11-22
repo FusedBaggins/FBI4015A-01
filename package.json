@@ -2,10 +2,12 @@
   "name": "fbi4015a-01",
   "version": "1.0.0",
   "description": "",
-  "main": "./app/index.ts",
+  "main": "./build/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "nodemon ./app/index.ts"
+    "serve": "node build/index.js",
+    "build": "tsc --build",
+    "postinstall": "npm run build"
   },
   "repository": {
     "type": "git",
