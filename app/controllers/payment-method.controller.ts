@@ -2,8 +2,8 @@ import { Request, Response } from "express";
 
 let paymentMethods: { [key: string]: { [key: string]: any }[] } = {
     "1": [
-        { id: '1', description: 'Piseiro da Sofrência', expirationDate: '', number: '' },
-        { id: '2', description: '', expirationDate: '', number: '' },
+        { id: "1", description: "Banco 1", expirationDate: "2022-12-01 00:00:00.000", securityCode: "2222", number: "2222.3333.4444.5555" },
+        { id: "dda8d5e0-55d4-11ec-b0e4-0b2861e598bf", description: "Banco 2", expirationDate: "2022-07-01 00:00:00.000", securityCode: "5569", number: "0069.5845.3587.5421" }
     ]
 }
 
