@@ -20,7 +20,8 @@ class Application {
 
     private _setMiddlewares(): void {
         this.express.use(express.json());
-        this.express.use(bodyParser.urlencoded({extended: true}));
+        this.express.use(bodyParser.urlencoded({ extended: true }));
+        this.express.use('/files', express.static('./files'));
     }
 
     private _setRoutes(): void {
