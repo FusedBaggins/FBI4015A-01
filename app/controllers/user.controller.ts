@@ -29,7 +29,7 @@ export default {
                 user[key] = (req.body[key]) ? req.body[key] : user[key];
             });
 
-            if (req.file) user.profilePhoto = `${req.get('host')}/files/${req.file.filename}`
+            if (req.file) user.profilePhoto = `https://${req.get('host')}/files/${req.file.filename}`
             return res.status(200).json({ "detail": "user updated" });
         }
         
