@@ -2,8 +2,8 @@ import { Request, Response } from "express";
 
 let users: { [key: string]: any }[] = [{
     id: "1",
-    name: "Gehlen Batatinha",
-    profilePhoto: ""
+    name: "Doritos",
+    profilePhoto: "https://fast-springs-08996.herokuapp.com/files/IMG_20210527_225715714.jpg"
 }];
 
 const findUserByID = (id: string) => {
@@ -29,8 +29,10 @@ export default {
                 user[key] = (req.body[key]) ? req.body[key] : user[key];
             });
 
+            if (req.file) user.profilePhoto = `${req.get('host')}/files/${req.file.filename}`
             return res.status(200).json({ "detail": "user updated" });
         }
+        
         return res.status(404).json({ "detail": "user not found" });
     }
 }
